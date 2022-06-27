@@ -11,5 +11,5 @@ import javax.inject.Singleton
 class UserUseCase @Inject constructor(
     private val userRepository: UserRepository
 ){
-    suspend fun getUserList(page: Int) = userRepository.getUserList(page)?.data
+    fun getUserList(page: Int) = userRepository.getUserList(page)?.data
 }

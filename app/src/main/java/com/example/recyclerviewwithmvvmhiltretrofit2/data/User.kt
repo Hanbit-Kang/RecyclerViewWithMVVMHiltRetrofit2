@@ -1,6 +1,6 @@
 package com.example.recyclerviewwithmvvmhiltretrofit2.data
 
-data class UserDao (
+data class User (
     val id: Int,
     val email: String,
     val first_name: String,
