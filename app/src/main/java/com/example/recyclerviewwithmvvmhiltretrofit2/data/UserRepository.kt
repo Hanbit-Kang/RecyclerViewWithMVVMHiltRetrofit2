@@ -6,7 +6,7 @@ import javax.inject.Inject
 class UserRepository @Inject constructor(
     private val reqresApi: ReqresApi
 ){
-    fun getUserList(page: Int): UserListResponse? {
+    suspend fun getUserList(page: Int): UserListResponse? {
         return reqresApi.getUserList(page).body()
     }
 }

@@ -15,9 +15,14 @@ import javax.inject.Inject
 class MainViewModel @Inject internal constructor(
     private val userUseCase: UserUseCase
 ): ViewModel() {
-    val userList: MutableLiveData<List<User>>
-    get() {
-        userList.postValue(userUseCase.getUserList(1))
-        return userList
+    val userList: MutableLiveData<List<User>> = MutableLiveData()
+    init {
+        updateUserList()
+    }
+
+    fun updateUserList() {
+        GlobalScope.launch {
+            userList.postValue(userUseCase.getUserList(1))
+        }
     }
 }
