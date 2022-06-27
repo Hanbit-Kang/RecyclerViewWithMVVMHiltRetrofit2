@@ -12,7 +12,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.recyclerview-with-mvvm-hilt-retrofit2"
+        applicationId "com.example.recyclerviewwithmvvmhiltretrofit2"
         minSdk 21
         targetSdk 32
         versionCode 1
