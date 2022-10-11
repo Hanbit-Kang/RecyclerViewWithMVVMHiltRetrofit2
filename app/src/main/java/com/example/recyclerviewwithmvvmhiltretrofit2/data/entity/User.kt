@@ -1,4 +1,4 @@
-package com.example.recyclerviewwithmvvmhiltretrofit2.data
+package com.example.recyclerviewwithmvvmhiltretrofit2.data.entity
 
 data class User (
     val id: Int,

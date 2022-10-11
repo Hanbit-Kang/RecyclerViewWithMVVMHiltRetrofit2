@@ -1,25 +1,22 @@
-package com.example.recyclerviewwithmvvmhiltretrofit2.compose
+package com.example.recyclerviewwithmvvmhiltretrofit2.ui
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Card
-import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.colorspace.Rgb
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
-import com.example.recyclerviewwithmvvmhiltretrofit2.data.User
+import com.example.recyclerviewwithmvvmhiltretrofit2.data.entity.User
+import com.example.recyclerviewwithmvvmhiltretrofit2.domain.model.UserModel
 
 @Composable
-fun UserItemView(user: User) {
+fun UserItemView(userModel: UserModel) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -32,7 +29,7 @@ fun UserItemView(user: User) {
         ) {
             val painter = rememberAsyncImagePainter(
                 model = ImageRequest.Builder(LocalContext.current)
-                    .data(user.avatar)
+                    .data(userModel.avatar)
                     .crossfade(true)
                     .build()
             )
@@ -42,7 +39,7 @@ fun UserItemView(user: User) {
                 contentDescription = "Picture of a user"
             )
             Text(
-                text = user.first_name + " " + user.last_name,
+                text = userModel.name,
                 modifier = Modifier.padding(start = 8.dp)
             )
         }

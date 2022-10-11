@@ -1,16 +1,14 @@
-package com.example.recyclerviewwithmvvmhiltretrofit2.adapter
+package com.example.recyclerviewwithmvvmhiltretrofit2.ui
 
 import android.view.ViewGroup
-import androidx.compose.material.MaterialTheme
 import androidx.compose.ui.platform.ComposeView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.recyclerviewwithmvvmhiltretrofit2.compose.UserItemView
-import com.example.recyclerviewwithmvvmhiltretrofit2.data.User
+import com.example.recyclerviewwithmvvmhiltretrofit2.domain.model.UserModel
 import com.google.android.material.composethemeadapter.MdcTheme
 
-class UserAdapter : ListAdapter<User, RecyclerView.ViewHolder>(UserDiffCallback()) {
+class UserAdapter : ListAdapter<UserModel, RecyclerView.ViewHolder>(UserModelDiffCallback()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return UserViewHolder(ComposeView(parent.context))
     }
@@ -23,22 +21,22 @@ class UserAdapter : ListAdapter<User, RecyclerView.ViewHolder>(UserDiffCallback(
     class UserViewHolder(
         composeView: ComposeView
     ) : RecyclerView.ViewHolder(composeView) {
-        fun bind(user: User) {
+        fun bind(userModel: UserModel) {
             (itemView as ComposeView).setContent {
-                MdcTheme() {
-                    UserItemView(user)
+                MdcTheme {
+                    UserItemView(userModel)
                 }
             }
         }
     }
 }
 
-private class UserDiffCallback : DiffUtil.ItemCallback<User>() {
-    override fun areItemsTheSame(oldItem: User, newItem: User): Boolean {
+private class UserModelDiffCallback : DiffUtil.ItemCallback<UserModel>() {
+    override fun areItemsTheSame(oldItem: UserModel, newItem: UserModel): Boolean {
         return oldItem.id == newItem.id
     }
 
-    override fun areContentsTheSame(oldItem: User, newItem: User): Boolean {
+    override fun areContentsTheSame(oldItem: UserModel, newItem: UserModel): Boolean {
         return oldItem == newItem
     }
 }

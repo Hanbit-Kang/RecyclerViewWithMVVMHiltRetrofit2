@@ -1,6 +1,6 @@
 package com.example.recyclerviewwithmvvmhiltretrofit2.di
 
-import com.example.recyclerviewwithmvvmhiltretrofit2.api.ReqresApi
+import com.example.recyclerviewwithmvvmhiltretrofit2.data.source.ReqresService
 import com.example.recyclerviewwithmvvmhiltretrofit2.utility.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -25,7 +25,7 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor): OkHttpClient {
+    fun provideOkHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor): OkHttpClient {
         return OkHttpClient.Builder()
             .addNetworkInterceptor(httpLoggingInterceptor)
             .build()
@@ -39,13 +39,20 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideReqresApi(httpClient: OkHttpClient, gsonConverterFactory: GsonConverterFactory): ReqresApi {
-        val retrofit = Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .client(httpClient)
-            .addConverterFactory(gsonConverterFactory)
-            .build()
+    fun provideRetrofit(
+        okHttpClient: OkHttpClient,
+        gsonConverterFactory: GsonConverterFactory
+    ): Retrofit = Retrofit.Builder()
+        .baseUrl(BASE_URL)
+        .client(okHttpClient)
+        .addConverterFactory(gsonConverterFactory)
+        .build()
 
-        return retrofit.create(ReqresApi::class.java)
+    @Provides
+    @Singleton
+    fun provideReqresService(
+        retrofit: Retrofit
+    ): ReqresService {
+        return retrofit.create(ReqresService::class.java)
     }
 }
