@@ -1,7 +1,6 @@
 package com.example.recyclerviewwithmvvmhiltretrofit2.di
 
 import com.example.recyclerviewwithmvvmhiltretrofit2.data.source.ReqresService
-import com.example.recyclerviewwithmvvmhiltretrofit2.utility.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -54,5 +53,9 @@ class NetworkModule {
         retrofit: Retrofit
     ): ReqresService {
         return retrofit.create(ReqresService::class.java)
+    }
+
+    companion object {
+        private const val BASE_URL = "https://reqres.in"
     }
 }
