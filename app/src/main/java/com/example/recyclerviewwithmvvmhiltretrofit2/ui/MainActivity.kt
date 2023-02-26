@@ -11,21 +11,16 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+
     private val viewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding: ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-
-        val adapter = UserAdapter()
-        binding.recyclerviewUserList.adapter = adapter
-
-        subscribeUi(adapter)
-    }
-
-    private fun subscribeUi(adapter: UserAdapter) {
-        viewModel.userList.observe(this) { userList ->
-            adapter.submitList(userList)
+        binding = DataBindingUtil.setContentView<ActivityMainBinding?>(this, R.layout.activity_main).also {
+            it.lifecycleOwner = this
+            it.viewModel = viewModel
+            it.adapter = UserAdapter()
         }
     }
 }

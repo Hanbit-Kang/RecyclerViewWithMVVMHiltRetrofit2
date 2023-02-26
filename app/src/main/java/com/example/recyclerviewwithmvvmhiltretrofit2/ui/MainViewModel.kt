@@ -1,11 +1,12 @@
 package com.example.recyclerviewwithmvvmhiltretrofit2.ui
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.recyclerviewwithmvvmhiltretrofit2.domain.model.UserModel
 import com.example.recyclerviewwithmvvmhiltretrofit2.domain.usecase.UserUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -13,15 +14,16 @@ import javax.inject.Inject
 class MainViewModel @Inject internal constructor(
     private val userUseCase: UserUseCase
 ): ViewModel() {
-    val userList: MutableLiveData<List<UserModel>> = MutableLiveData()
+    private val _userList = MutableStateFlow<List<UserModel>>(listOf())
+    val userList: StateFlow<List<UserModel>> = _userList
 
     init {
-        getUserList()
+        readUserList()
     }
 
-    fun getUserList() {
+    fun readUserList() {
         viewModelScope.launch {
-            userList.postValue(userUseCase.getUserList(1))
+            _userList.value = userUseCase.getUserList(1)
         }
     }
 }
