@@ -1,0 +1,88 @@
+[versions]
+activityCompose = "1.4.0"
+androidXTest = "1.5.0"
+androidXTestRunner = "1.5.2"
+appCompat = "1.4.1"
+coil = "2.0.0"
+compose = "1.1.1"
+composeThemeAdapter = "1.1.1"
+constraintLayout = "2.1.3"
+constraintLayoutCompose = "1.0.0-alpha08"
+coreTesting = "2.1.0"
+coroutines = "1.6.1"
+espresso = "3.5.1"
+fragment = "1.4.1"
+gradle = "7.3.1"
+gson = "2.9.0"
+hilt = "2.41"
+junit = "4.13.2"
+kotlinGradlePlugin = "1.6.10"
+ktlint = "0.40.0"
+ktx = "1.7.0"
+lifecycle = "2.4.1"
+material = "1.5.0"
+navigation = "2.4.1"
+okhttpLogging = "4.9.3"
+paging = "3.1.1"
+profileInstaller = "1.2.0-beta01"
+recyclerView = "1.3.0-alpha02"
+retrofit = "2.9.0"
+room = "2.4.2"
+runner = "1.0.1"
+testExtJunit = "1.1.5"
+tracing = "1.1.0"
+truth = "1.1.3"
+uiAutomator = "2.2.0"
+viewModelCompose = "2.4.1"
+viewPager = "1.0.0"
+work = "2.8.0"
+
+[libraries]
+"activity-compose" = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+"appcompat" = { group = "androidx.appcompat", name = "appcompat", version.ref = "appCompat" }
+"android-material" = { group = "com.google.android.material", name = "material", version.ref = "composeThemeAdapter" }
+"coil-compose" = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
+"compose-material" = { group = "androidx.compose.material", name = "material", version.ref = "compose" }
+"compose-theme-adapter" = { group = "com.google.android.material", name = "compose-theme-adapter", version.ref = "composeThemeAdapter" }
+"constraintlayout" = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintLayout" }
+"constraintlayout-compose" = { group = "androidx.constraintlayout", name = "constraintlayout-compose", version.ref = "constraintLayoutCompose" }
+"converter-gson" = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
+"core-ktx" = { group = "androidx.core", name = "core-ktx", version.ref = "ktx" }
+"core-testing" = { group = "androidx.arch.core", name = "core-testing", version.ref = "coreTesting"}
+"espresso-contrib" = { group = "androidx.test.espresso", name = "espresso-contrib", version.ref = "espresso" }
+"espresso-core" = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso" }
+"espresso-intents" = { group = "androidx.test.espresso", name = "espresso-intents", version.ref = "espresso" }
+"foundation" = { group = "androidx.compose.foundation", name = "foundation", version.ref = "compose" }
+"foundation-layout" = { group = "androidx.compose.foundation", name = "foundation-layout", version.ref = "compose" }
+"fragment-ktx" = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragment" }
+"gradle" = { group = "com.android.tools.build", name = "gradle", version.ref = "gradle" }
+"gson" = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+"hilt-android" = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+"hilt-android-compiler" = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+"hilt-android-gradle-plugin" = { group = "com.google.dagger", name = "hilt-android-gradle-plugin", version.ref = "hilt"}
+"junit" = { group = "androidx.test.ext", name = "junit", version.ref = "testExtJunit"}
+"kotlinx-coroutines-android" = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+"kotlinx-coroutines-core" = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+"kotlin-gradle-plugin" = { group ="org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlinGradlePlugin" }
+"lifecycle-livedata-ktx" = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle" }
+"lifecycle-viewmodel-compose" = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "viewModelCompose" }
+"lifecycle-viewmodel-ktx" = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+"logging-interceptor" = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttpLogging" }
+"navigation-fragment-ktx" = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigation" }
+"navigation-safe-args-gradle-plugin" = { group = "androidx.navigation", name = "navigation-safe-args-gradle-plugin", version.ref = "navigation" }
+"navigation-ui-ktx" = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigation" }
+"paging-runtime-ktx" = { group = "androidx.paging", name = "paging-runtime-ktx", version.ref = "paging" }
+"profileinstaller" = { group = "androidx.profileinstaller", name = "profileinstaller", version.ref = "profileInstaller" }
+"retrofit" = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+"room-compiler" = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+"room-ktx" = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+"room-runtime" = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+"runtime" = { group = "androidx.compose.runtime", name = "runtime", version.ref = "compose" }
+"runtime-livedata" = { group = "androidx.compose.runtime", name = "runtime-livedata", version.ref = "compose" }
+"tracing-ktx" = { group = "androidx.tracing", name = "tracing-ktx", version.ref = "tracing" }
+"ui" = { group = "androidx.compose.ui", name = "ui", version.ref = "compose" }
+"ui-tooling" = { group = "androidx.compose.ui", name = "ui-tooling", version.ref = "compose" }
+"ui-tooling-preview" = { group = "androidx.compose.ui", name = "ui-tooling-preview", version.ref = "compose" }
+"ui-viewbinding" = { group = "androidx.compose.ui", name = "ui-viewbinding", version.ref = "compose" }
+"viewpager2" = { group = "androidx.viewpager2", name = "viewpager2", version.ref = "viewPager" }
+"work-runtime-ktx" = { group = "androidx.work", name = "work-runtime-ktx", version.ref = "work" }
