@@ -7,5 +7,5 @@ import retrofit2.http.Query
 
 interface ReqresService {
     @GET("api/users")
-    suspend fun getUserList(@Query("page") page: Int): Response<UserListResponse>
+    suspend fun getUserList(@Query("page") page: Int): UserListResponse
 }
